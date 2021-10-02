@@ -19,7 +19,7 @@ public class Result {
 
     public void strike() {
         strike = 0;
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < randomBaseNumber.length(); i++) {
             strikeCount(userBaseNumber.charAt(i), randomBaseNumber.charAt(i));
         }
     }
@@ -33,7 +33,7 @@ public class Result {
     public void ball() {
         ball = 0;
         String[] splitUserNumber = userBaseNumber.split("");
-        for (int i = 1; i <= 3; i++) {
+        for (int i = 1; i <= randomBaseNumber.length(); i++) {
             ballCount(splitUserNumber[i-1], i);
         }
     }
@@ -51,7 +51,12 @@ public class Result {
             Output.strikeMessage(strike);
             System.out.print(" ");
         }
-        Output.ballMessage(ball);
+        if(strike != 3 && ball > 0) {
+            Output.ballMessage(ball);
+        }
+        if(strike == 0 && ball == 0){
+            Output.noStrikeNoBall();
+        }
         System.out.println();
     }
 

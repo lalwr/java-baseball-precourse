@@ -1,22 +1,23 @@
 package baseball;
 
 import domain.Baseball;
+import domain.ContinueGame;
+import domain.RandomBaseBall;
 import domain.Result;
-import nextstep.utils.Randoms;
+import ui.Input;
 
 public class BaseBallManager {
-    private static final int MIN_NUMBER = 100;
-    private static final int MAX_NUMBER = 999;
 
     private int userBaseBall;
     private int randomBaseBall;
 
-    public BaseBallManager() {
-        this.randomBaseBall = Randoms.pickNumberInRange(MIN_NUMBER, MAX_NUMBER);
-        System.out.println("random : " + randomBaseBall);
+    private void randomNumberSetting() {
+        RandomBaseBall randomBase = new RandomBaseBall();
+        randomBaseBall = randomBase.getNumber();
     }
 
     public void play() {
+        randomNumberSetting();
         Result result = new Result();
         do{
             Baseball baseball = new Baseball();
@@ -24,6 +25,14 @@ public class BaseBallManager {
             result.checkCount(userBaseBall, randomBaseBall);
             result.printResult();
         }while (result.stop());
+        retry();
     }
 
+    public void retry() {
+        Input.retryMessage();
+        ContinueGame continueGame = new ContinueGame();
+        if(continueGame.isContinue()){
+            play();
+        }
+    }
 }

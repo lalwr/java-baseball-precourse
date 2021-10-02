@@ -4,7 +4,7 @@ import nextstep.utils.Console;
 import ui.Input;
 
 public class Baseball {
-    private static final int MAX_LENGTH = 3;
+    private static final int LENGTH = 3;
     private static final int MIN_NUMBER = 100;
     private static final int MAX_NUMBER = 999;
 
@@ -40,7 +40,7 @@ public class Baseball {
     }
 
     private boolean maxLength() {
-        if(baseballNumber.length() > MAX_LENGTH) {
+        if(baseballNumber.length() != LENGTH) {
             Input.errorInputMessage();
             return true;
         }
@@ -50,5 +50,6 @@ public class Baseball {
     private void inputBaseBall(){
         Input.baseballNumber();
         this.baseballNumber = Console.readLine();
+        System.out.println(baseballNumber);
     }
 }
