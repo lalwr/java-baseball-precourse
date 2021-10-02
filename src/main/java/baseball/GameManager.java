@@ -1,9 +1,11 @@
 package baseball;
 
+import domain.Baseball;
+
 public class GameManager {
 
     public void play() {
-        Baseball baseball = new Baseball();
-        baseball.start();
+        BaseBallManager baseBallManager = new BaseBallManager();
+        baseBallManager.play();
     }
 }

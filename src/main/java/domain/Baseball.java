@@ -1,8 +1,7 @@
-package baseball;
+package domain;
 
 import nextstep.utils.Console;
 import ui.Input;
-import ui.Output;
 
 public class Baseball {
     private static final int MAX_LENGTH = 3;
