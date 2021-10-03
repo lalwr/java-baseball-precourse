@@ -9,7 +9,6 @@ public class RandomBaseBall {
     private static final int RANGE_MAX_NUMBER = 999;
     private static final int MIN_NUMBER = 0;
     private static final int MAX_NUMBER = 9;
-    private static final int LENGTH = 3;
 
     private int randomBaseBallNumber;
 
@@ -22,7 +21,7 @@ public class RandomBaseBall {
     }
 
     private boolean valid() {
-        if(maxLength() || rangeNumber()){
+        if(rangeNumber()){
             Output.noStrikeNoBall();
             return true;
         }
@@ -33,14 +32,6 @@ public class RandomBaseBall {
         int number = randomBaseBallNumber;
         if(!((RANGE_MIN_NUMBER <= number) && (number <= RANGE_MAX_NUMBER))) {
             Input.errorInputRangeMessageMessage();
-            return true;
-        }
-        return false;
-    }
-
-    private boolean maxLength() {
-        if(String.valueOf(randomBaseBallNumber).length() != LENGTH) {
-            Input.errorInputMessage();
             return true;
         }
         return false;

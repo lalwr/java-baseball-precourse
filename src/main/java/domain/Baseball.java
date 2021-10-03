@@ -24,7 +24,7 @@ public class Baseball {
     }
 
     private boolean valid() {
-        if(maxLength() || rangeNumber()){
+        if(rangeNumber()){
             return true;
         }
         return false;
@@ -39,17 +39,8 @@ public class Baseball {
         return false;
     }
 
-    private boolean maxLength() {
-        if(baseballNumber.length() != LENGTH) {
-            Input.errorInputMessage();
-            return true;
-        }
-        return false;
-    }
-
     private void inputBaseBall(){
         Input.baseballNumber();
         this.baseballNumber = Console.readLine();
-        System.out.println(baseballNumber);
     }
 }

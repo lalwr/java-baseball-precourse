@@ -49,7 +49,6 @@ public class Result {
     public void printResult(){
         if(strike > 0) {
             Output.strikeMessage(strike);
-            System.out.print(" ");
         }
         if(strike != 3 && ball > 0) {
             Output.ballMessage(ball);
@@ -57,7 +56,7 @@ public class Result {
         if(strike == 0 && ball == 0){
             Output.noStrikeNoBall();
         }
-        System.out.println();
+        Output.line();
     }
 
     public boolean stop() {

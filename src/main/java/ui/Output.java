@@ -7,7 +7,7 @@ public class Output {
     private static final String NO_STRIKE_NO_BALL_MESSAGE = "낫싱";
 
     public static void strikeMessage(int strikeCount){
-        System.out.print(strikeCount + STRIKE_MESSAGE);
+        System.out.print(strikeCount + STRIKE_MESSAGE + " ");
     }
 
     public static void ballMessage(int ballCount){
@@ -20,6 +20,9 @@ public class Output {
 
     public static void noStrikeNoBall() {
         System.out.println(NO_STRIKE_NO_BALL_MESSAGE);
+    }
 
+    public static void line() {
+        System.out.println();
     }
 }
